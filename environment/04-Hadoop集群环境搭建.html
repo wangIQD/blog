@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hadoop环境搭建 | 老王BigData</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/blog/1658153061402.jpg">
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.70d78c16.css" as="style"><link rel="preload" href="/blog/assets/js/app.eb600adf.js" as="script"><link rel="preload" href="/blog/assets/js/2.d9499689.js" as="script"><link rel="preload" href="/blog/assets/js/16.4db87e2f.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.10b05dea.js"><link rel="prefetch" href="/blog/assets/js/11.6b5482fa.js"><link rel="prefetch" href="/blog/assets/js/12.353e8386.js"><link rel="prefetch" href="/blog/assets/js/13.c47f6d6f.js"><link rel="prefetch" href="/blog/assets/js/14.5da7853f.js"><link rel="prefetch" href="/blog/assets/js/15.f967bc93.js"><link rel="prefetch" href="/blog/assets/js/17.b25aab8f.js"><link rel="prefetch" href="/blog/assets/js/18.8041ca68.js"><link rel="prefetch" href="/blog/assets/js/19.b403f92f.js"><link rel="prefetch" href="/blog/assets/js/20.03bc59d0.js"><link rel="prefetch" href="/blog/assets/js/21.0155208b.js"><link rel="prefetch" href="/blog/assets/js/22.8b62318f.js"><link rel="prefetch" href="/blog/assets/js/23.4ec4912b.js"><link rel="prefetch" href="/blog/assets/js/24.d153ad0e.js"><link rel="prefetch" href="/blog/assets/js/25.3f37bd0a.js"><link rel="prefetch" href="/blog/assets/js/26.aeb5d091.js"><link rel="prefetch" href="/blog/assets/js/27.c78901ba.js"><link rel="prefetch" href="/blog/assets/js/28.412908b8.js"><link rel="prefetch" href="/blog/assets/js/29.fa7c391e.js"><link rel="prefetch" href="/blog/assets/js/3.b8b08cb1.js"><link rel="prefetch" href="/blog/assets/js/30.e4bbc0cb.js"><link rel="prefetch" href="/blog/assets/js/31.0ed984b3.js"><link rel="prefetch" href="/blog/assets/js/32.c8e232b4.js"><link rel="prefetch" href="/blog/assets/js/33.aae4b716.js"><link rel="prefetch" href="/blog/assets/js/34.21bec70b.js"><link rel="prefetch" href="/blog/assets/js/35.e4e56660.js"><link rel="prefetch" href="/blog/assets/js/36.193e04a4.js"><link rel="prefetch" href="/blog/assets/js/37.8a4f96e1.js"><link rel="prefetch" href="/blog/assets/js/38.7d59c43b.js"><link rel="prefetch" href="/blog/assets/js/39.4b7901ad.js"><link rel="prefetch" href="/blog/assets/js/4.7873f619.js"><link rel="prefetch" href="/blog/assets/js/40.7252afbf.js"><link rel="prefetch" href="/blog/assets/js/5.5f6e076a.js"><link rel="prefetch" href="/blog/assets/js/6.e0b60854.js"><link rel="prefetch" href="/blog/assets/js/7.eca63a3f.js"><link rel="prefetch" href="/blog/assets/js/8.4c7a01c6.js"><link rel="prefetch" href="/blog/assets/js/9.9c04a843.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.70d78c16.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">老王BigData</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/environment/" class="nav-link router-link-active">
+  环境搭建
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法系列" class="dropdown-title"><span class="title">数据结构与算法系列</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据结构与算法系列" class="mobile-dropdown-title"><span class="title">数据结构与算法系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/algorithm/algorithm/" class="nav-link">
+  数据结构与算法
+</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/leetcode/" class="nav-link">
+  LeetCode刷题
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/kafka/" class="nav-link">
+  Kafka源码
+</a></div><div class="nav-item"><a href="/blog/flink/" class="nav-link">
+  Flink源码
+</a></div><div class="nav-item"><a href="/blog/doris/" class="nav-link">
+  Doris系列
+</a></div><div class="nav-item"><a href="/blog/clickhouse/" class="nav-link">
+  ClickHouse系列
+</a></div><div class="nav-item"><a href="/blog/tattle/" class="nav-link">
+  杂谈
+</a></div><div class="nav-item"><a href="https://github.com/wangIQD" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/environment/" class="nav-link router-link-active">
+  环境搭建
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法系列" class="dropdown-title"><span class="title">数据结构与算法系列</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据结构与算法系列" class="mobile-dropdown-title"><span class="title">数据结构与算法系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/algorithm/algorithm/" class="nav-link">
+  数据结构与算法
+</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/leetcode/" class="nav-link">
+  LeetCode刷题
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/kafka/" class="nav-link">
+  Kafka源码
+</a></div><div class="nav-item"><a href="/blog/flink/" class="nav-link">
+  Flink源码
+</a></div><div class="nav-item"><a href="/blog/doris/" class="nav-link">
+  Doris系列
+</a></div><div class="nav-item"><a href="/blog/clickhouse/" class="nav-link">
+  ClickHouse系列
+</a></div><div class="nav-item"><a href="/blog/tattle/" class="nav-link">
+  杂谈
+</a></div><div class="nav-item"><a href="https://github.com/wangIQD" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Environment</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/environment/" aria-current="page" class="sidebar-link">环境搭建</a></li><li><a href="/blog/environment/01-安装VM虚拟机.html" class="sidebar-link">安装VM虚拟机</a></li><li><a href="/blog/environment/02-CentOS环境搭建.html" class="sidebar-link">CentOS环境搭建</a></li><li><a href="/blog/environment/03-Java环境搭建.html" class="sidebar-link">Java环境搭建</a></li><li><a href="/blog/environment/04-Hadoop集群环境搭建.html" class="active sidebar-link">Hadoop环境搭建</a></li><li><a href="/blog/environment/05-ZooKeeper环境搭建.html" class="sidebar-link">ZooKeeper环境搭建</a></li><li><a href="/blog/environment/06-Hadoop的HA.html" class="sidebar-link">Hadoop的HA</a></li><li><a href="/blog/environment/07-Hive环境搭建.html" class="sidebar-link">Hive环境搭建</a></li><li><a href="/blog/environment/08-Flume环境搭建.html" class="sidebar-link">Flume环境搭建</a></li><li><a href="/blog/environment/09-HBase环境搭建.html" class="sidebar-link">HBase环境搭建</a></li><li><a href="/blog/environment/10-Kafka环境搭建.html" class="sidebar-link">Kafka环境搭建</a></li><li><a href="/blog/environment/11-Redis环境搭建.html" class="sidebar-link">Redis环境搭建</a></li><li><a href="/blog/environment/12-ES环境搭建.html" class="sidebar-link">ES环境搭建</a></li><li><a href="/blog/environment/13-ClickHouse环境搭建.html" class="sidebar-link">ClickHouse环境搭建</a></li><li><a href="/blog/environment/14-Doris环境搭建.html" class="sidebar-link">Doris环境搭建</a></li><li><a href="/blog/environment/15-Spark on Yarn环境搭建.html" class="sidebar-link">Spark on Yarn 环境搭建</a></li><li><a href="/blog/environment/16-Flink on Yarn环境搭建.html" class="sidebar-link">Flink on Yarn 环境搭建</a></li><li><a href="/blog/environment/17-Hive On Spark环境搭建.html" class="sidebar-link">Hive On Spark 环境搭建</a></li><li><a href="/blog/environment/18-Spark On Hive环境搭建.html" class="sidebar-link">Spark On Hive 环境搭建</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_1、上传并解压"><a href="#_1、上传并解压" class="header-anchor">#</a> 1、上传并解压</h1> <p>使用 <code>SFTP</code> 工具上传到 <code>/opt/software</code>，并将其解压到 <code>/opt/module</code> 目录下</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 software<span class="token punctuation">]</span>$ <span class="token function">tar</span> -zxvf hadoop-3.1.3.tar.gz -C /opt/module/
+</code></pre></div><h1 id="_2、添加环境变量"><a href="#_2、添加环境变量" class="header-anchor">#</a> 2、添加环境变量</h1> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 software<span class="token punctuation">]</span>$ <span class="token function">sudo</span> <span class="token function">vim</span> /etc/profile.d/my_env.sh
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># HADOOP_HOME</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">HADOOP_HOME</span><span class="token operator">=</span>/opt/module/hadoop-3.1.3
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$HADOOP_HOME</span>/bin
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$HADOOP_HOME</span>/sbin
+</code></pre></div><h1 id="_3、修改相关配置"><a href="#_3、修改相关配置" class="header-anchor">#</a> 3、修改相关配置</h1> <p>修改 core-site.xml</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 software<span class="token punctuation">]</span>$ <span class="token builtin class-name">cd</span> /opt/module/hadoop-3.1.3/etc/hadoop
+<span class="token punctuation">[</span>laowang@hadoop102 hadoop<span class="token punctuation">]</span>$ <span class="token function">vim</span> core-site.xml
+</code></pre></div><div class="language-xml extra-class"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="token prolog">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;configuration.xsl&quot;?&gt;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 指定NameNode的地址 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>fs.defaultFS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>hdfs://hadoop102:8020<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 指定hadoop数据的存储目录 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hadoop.tmp.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>/opt/module/hadoop-3.1.3/data<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 配置HDFS网页登录使用的静态用户为laowang --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hadoop.http.staticuser.user<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>laowang<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+    
+    <span class="token comment">&lt;!-- 配置该laowang(superUser)允许通过代理访问的主机节点 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hadoop.proxyuser.laowang.hosts<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+    
+    <span class="token comment">&lt;!-- 配置该laowang(superUser)允许通过代理用户所属组 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hadoop.proxyuser.laowang.groups<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+    
+    <span class="token comment">&lt;!-- 配置该laowang(superUser)允许通过代理的用户--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>hadoop.proxyuser.laowang.users<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>配置 hdfs-site.xml</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 hadoop<span class="token punctuation">]</span>$ <span class="token function">vim</span> hdfs-site.xml
+</code></pre></div><div class="language-xml extra-class"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="token prolog">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;configuration.xsl&quot;?&gt;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+	<span class="token comment">&lt;!-- nn web端访问地址--&gt;</span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>dfs.namenode.http-address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>hadoop102:9870<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+    
+	<span class="token comment">&lt;!-- 2nn web端访问地址--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>dfs.namenode.secondary.http-address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>hadoop104:9868<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+    
+    <span class="token comment">&lt;!-- 测试环境指定HDFS副本的数量3 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>dfs.replication<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>配置 yarn-site.xml</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 hadoop<span class="token punctuation">]</span>$ <span class="token function">vim</span> yarn-site.xml
+</code></pre></div><div class="language-xml extra-class"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="token prolog">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;configuration.xsl&quot;?&gt;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 指定MR走shuffle --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>yarn.nodemanager.aux-services<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>mapreduce_shuffle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 指定ResourceManager的地址--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>yarn.resourcemanager.hostname<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>hadoop103<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 环境变量的继承 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>yarn.nodemanager.env-whitelist<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+    
+    <span class="token comment">&lt;!--yarn单个容器允许分配的最大最小内存 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>yarn.scheduler.minimum-allocation-mb<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>512<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>yarn.scheduler.maximum-allocation-mb<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>4096<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+    
+    <span class="token comment">&lt;!-- yarn容器允许管理的物理内存大小 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>yarn.nodemanager.resource.memory-mb<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>4096<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+    
+    <span class="token comment">&lt;!-- 关闭yarn对物理内存和虚拟内存的限制检查 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>yarn.nodemanager.pmem-check-enabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>yarn.nodemanager.vmem-check-enabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>配置 mapred-site.xml</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 hadoop<span class="token punctuation">]</span>$ <span class="token function">vim</span> mapred-site.xml
+</code></pre></div><div class="language-xml extra-class"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="token prolog">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;configuration.xsl&quot;?&gt;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+	<span class="token comment">&lt;!-- 指定MapReduce程序运行在Yarn上 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapreduce.framework.name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>yarn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>配置 workers</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 hadoop<span class="token punctuation">]</span>$ <span class="token function">vim</span> workers
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>hadoop102
+hadoop103
+hadoop104
+</code></pre></div><p>配置历史服务器</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 hadoop<span class="token punctuation">]</span>$ <span class="token function">vim</span> mapred-site.xml
+</code></pre></div><div class="language-xml extra-class"><pre class="language-xml"><code><span class="token comment">&lt;!-- 历史服务器端地址 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapreduce.jobhistory.address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>hadoop102:10020<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 历史服务器web端地址 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapreduce.jobhistory.webapp.address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>hadoop102:19888<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>配置日志的聚集</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 hadoop<span class="token punctuation">]</span>$ <span class="token function">vim</span> yarn-site.xml
+</code></pre></div><div class="language-xml extra-class"><pre class="language-xml"><code><span class="token comment">&lt;!-- 开启日志聚集功能 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>yarn.log-aggregation-enable<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 设置日志聚集服务器地址 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>yarn.log.server.url<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>http://hadoop102:19888/jobhistory/logs<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 设置日志保留时间为7天 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>yarn.log-aggregation.retain-seconds<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>604800<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h1 id="_4、同步环境"><a href="#_4、同步环境" class="header-anchor">#</a> 4、同步环境</h1> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 hadoop<span class="token punctuation">]</span>$ xsync /opt/module/hadoop-3.1.3/
+<span class="token punctuation">[</span>laowang@hadoop102 hadoop<span class="token punctuation">]</span>$ <span class="token function">sudo</span> ~/bin/xsync /etc/profile.d/my_env.sh
+</code></pre></div><h1 id="_5、启动hadoop"><a href="#_5、启动hadoop" class="header-anchor">#</a> 5、启动Hadoop</h1> <p>格式化 NameNode</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 hadoop-3.1.3<span class="token punctuation">]</span>$ hdfs namenode -format
+</code></pre></div><p>启动 HDFS 和 Yarn</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 hadoop-3.1.3<span class="token punctuation">]</span>$ start-dfs.sh
+<span class="token punctuation">[</span>laowang@hadoop102 hadoop-3.1.3<span class="token punctuation">]</span>$ start-yarn.sh
+</code></pre></div><h1 id="_6、相关脚本"><a href="#_6、相关脚本" class="header-anchor">#</a> 6、相关脚本</h1> <p>Hadoop 群起脚本</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 hadoop-3.1.3<span class="token punctuation">]</span>$ <span class="token builtin class-name">cd</span> /home/laowang/bin
+<span class="token punctuation">[</span>laowang@hadoop102 bin<span class="token punctuation">]</span>$ <span class="token function">touch</span> my_hadoop.sh
+<span class="token punctuation">[</span>laowang@hadoop102 bin<span class="token punctuation">]</span>$ <span class="token function">chmod</span> +x my_hadoop.sh
+<span class="token punctuation">[</span>laowang@hadoop102 bin<span class="token punctuation">]</span>$ <span class="token function">vim</span> my_hadoop.sh
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$#</span> -lt <span class="token number">1</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;No Args Input...&quot;</span>
+    <span class="token builtin class-name">exit</span> <span class="token punctuation">;</span>
+<span class="token keyword">fi</span>
+<span class="token keyword">case</span> <span class="token variable">$1</span> <span class="token keyword">in</span>
+<span class="token string">&quot;start&quot;</span><span class="token punctuation">)</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot; =================== 启动 hadoop集群 ===================&quot;</span>
+
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot; --------------- 启动 hdfs ---------------&quot;</span>
+        <span class="token function">ssh</span> hadoop102 <span class="token string">&quot;/opt/module/hadoop-3.1.3/sbin/start-dfs.sh&quot;</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot; --------------- 启动 yarn ---------------&quot;</span>
+        <span class="token function">ssh</span> hadoop103 <span class="token string">&quot;/opt/module/hadoop-3.1.3/sbin/start-yarn.sh&quot;</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot; --------------- 启动 historyserver ---------------&quot;</span>
+        <span class="token function">ssh</span> hadoop102 <span class="token string">&quot;/opt/module/hadoop-3.1.3/bin/mapred --daemon start historyserver&quot;</span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token string">&quot;stop&quot;</span><span class="token punctuation">)</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot; =================== 关闭 hadoop集群 ===================&quot;</span>
+
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot; --------------- 关闭 historyserver ---------------&quot;</span>
+        <span class="token function">ssh</span> hadoop102 <span class="token string">&quot;/opt/module/hadoop-3.1.3/bin/mapred --daemon stop historyserver&quot;</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot; --------------- 关闭 yarn ---------------&quot;</span>
+        <span class="token function">ssh</span> hadoop103 <span class="token string">&quot;/opt/module/hadoop-3.1.3/sbin/stop-yarn.sh&quot;</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot; --------------- 关闭 hdfs ---------------&quot;</span>
+        <span class="token function">ssh</span> hadoop102 <span class="token string">&quot;/opt/module/hadoop-3.1.3/sbin/stop-dfs.sh&quot;</span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+*<span class="token punctuation">)</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;Input Args Error...&quot;</span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
+</code></pre></div><p>查看 Java 进程脚本</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 bin<span class="token punctuation">]</span>$ <span class="token function">touch</span> jpsall.sh
+<span class="token punctuation">[</span>laowang@hadoop102 bin<span class="token punctuation">]</span>$ <span class="token function">chmod</span> +x jpsall.sh
+<span class="token punctuation">[</span>laowang@hadoop102 bin<span class="token punctuation">]</span>$ <span class="token function">vim</span> jpsall.sh
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">host</span> <span class="token keyword">in</span> hadoop102 hadoop103 hadoop104
+<span class="token keyword">do</span>
+        <span class="token builtin class-name">echo</span> <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span> <span class="token variable">$host</span> <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+        <span class="token function">ssh</span> <span class="token variable">$host</span> jps <span class="token operator">|</span> <span class="token function">grep</span> -vi jps
+<span class="token keyword">done</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/environment/03-Java环境搭建.html" class="prev">
+        Java环境搭建
+      </a></span> <span class="next"><a href="/blog/environment/05-ZooKeeper环境搭建.html">
+        ZooKeeper环境搭建
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><section class="side-anchor"><ul style="display:none;"></ul></section></div></div>
+    <script src="/blog/assets/js/app.eb600adf.js" defer></script><script src="/blog/assets/js/2.d9499689.js" defer></script><script src="/blog/assets/js/16.4db87e2f.js" defer></script>
+  </body>
+</html>

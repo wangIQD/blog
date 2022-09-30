@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ZooKeeper环境搭建 | 老王BigData</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/blog/1658153061402.jpg">
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.70d78c16.css" as="style"><link rel="preload" href="/blog/assets/js/app.eb600adf.js" as="script"><link rel="preload" href="/blog/assets/js/2.d9499689.js" as="script"><link rel="preload" href="/blog/assets/js/17.b25aab8f.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.10b05dea.js"><link rel="prefetch" href="/blog/assets/js/11.6b5482fa.js"><link rel="prefetch" href="/blog/assets/js/12.353e8386.js"><link rel="prefetch" href="/blog/assets/js/13.c47f6d6f.js"><link rel="prefetch" href="/blog/assets/js/14.5da7853f.js"><link rel="prefetch" href="/blog/assets/js/15.f967bc93.js"><link rel="prefetch" href="/blog/assets/js/16.4db87e2f.js"><link rel="prefetch" href="/blog/assets/js/18.8041ca68.js"><link rel="prefetch" href="/blog/assets/js/19.b403f92f.js"><link rel="prefetch" href="/blog/assets/js/20.03bc59d0.js"><link rel="prefetch" href="/blog/assets/js/21.0155208b.js"><link rel="prefetch" href="/blog/assets/js/22.8b62318f.js"><link rel="prefetch" href="/blog/assets/js/23.4ec4912b.js"><link rel="prefetch" href="/blog/assets/js/24.d153ad0e.js"><link rel="prefetch" href="/blog/assets/js/25.3f37bd0a.js"><link rel="prefetch" href="/blog/assets/js/26.aeb5d091.js"><link rel="prefetch" href="/blog/assets/js/27.c78901ba.js"><link rel="prefetch" href="/blog/assets/js/28.412908b8.js"><link rel="prefetch" href="/blog/assets/js/29.fa7c391e.js"><link rel="prefetch" href="/blog/assets/js/3.b8b08cb1.js"><link rel="prefetch" href="/blog/assets/js/30.e4bbc0cb.js"><link rel="prefetch" href="/blog/assets/js/31.0ed984b3.js"><link rel="prefetch" href="/blog/assets/js/32.c8e232b4.js"><link rel="prefetch" href="/blog/assets/js/33.aae4b716.js"><link rel="prefetch" href="/blog/assets/js/34.21bec70b.js"><link rel="prefetch" href="/blog/assets/js/35.e4e56660.js"><link rel="prefetch" href="/blog/assets/js/36.193e04a4.js"><link rel="prefetch" href="/blog/assets/js/37.8a4f96e1.js"><link rel="prefetch" href="/blog/assets/js/38.7d59c43b.js"><link rel="prefetch" href="/blog/assets/js/39.4b7901ad.js"><link rel="prefetch" href="/blog/assets/js/4.7873f619.js"><link rel="prefetch" href="/blog/assets/js/40.7252afbf.js"><link rel="prefetch" href="/blog/assets/js/5.5f6e076a.js"><link rel="prefetch" href="/blog/assets/js/6.e0b60854.js"><link rel="prefetch" href="/blog/assets/js/7.eca63a3f.js"><link rel="prefetch" href="/blog/assets/js/8.4c7a01c6.js"><link rel="prefetch" href="/blog/assets/js/9.9c04a843.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.70d78c16.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">老王BigData</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/environment/" class="nav-link router-link-active">
+  环境搭建
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法系列" class="dropdown-title"><span class="title">数据结构与算法系列</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据结构与算法系列" class="mobile-dropdown-title"><span class="title">数据结构与算法系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/algorithm/algorithm/" class="nav-link">
+  数据结构与算法
+</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/leetcode/" class="nav-link">
+  LeetCode刷题
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/kafka/" class="nav-link">
+  Kafka源码
+</a></div><div class="nav-item"><a href="/blog/flink/" class="nav-link">
+  Flink源码
+</a></div><div class="nav-item"><a href="/blog/doris/" class="nav-link">
+  Doris系列
+</a></div><div class="nav-item"><a href="/blog/clickhouse/" class="nav-link">
+  ClickHouse系列
+</a></div><div class="nav-item"><a href="/blog/tattle/" class="nav-link">
+  杂谈
+</a></div><div class="nav-item"><a href="https://github.com/wangIQD" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/environment/" class="nav-link router-link-active">
+  环境搭建
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法系列" class="dropdown-title"><span class="title">数据结构与算法系列</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据结构与算法系列" class="mobile-dropdown-title"><span class="title">数据结构与算法系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/algorithm/algorithm/" class="nav-link">
+  数据结构与算法
+</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/leetcode/" class="nav-link">
+  LeetCode刷题
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/kafka/" class="nav-link">
+  Kafka源码
+</a></div><div class="nav-item"><a href="/blog/flink/" class="nav-link">
+  Flink源码
+</a></div><div class="nav-item"><a href="/blog/doris/" class="nav-link">
+  Doris系列
+</a></div><div class="nav-item"><a href="/blog/clickhouse/" class="nav-link">
+  ClickHouse系列
+</a></div><div class="nav-item"><a href="/blog/tattle/" class="nav-link">
+  杂谈
+</a></div><div class="nav-item"><a href="https://github.com/wangIQD" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Environment</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/environment/" aria-current="page" class="sidebar-link">环境搭建</a></li><li><a href="/blog/environment/01-安装VM虚拟机.html" class="sidebar-link">安装VM虚拟机</a></li><li><a href="/blog/environment/02-CentOS环境搭建.html" class="sidebar-link">CentOS环境搭建</a></li><li><a href="/blog/environment/03-Java环境搭建.html" class="sidebar-link">Java环境搭建</a></li><li><a href="/blog/environment/04-Hadoop集群环境搭建.html" class="sidebar-link">Hadoop环境搭建</a></li><li><a href="/blog/environment/05-ZooKeeper环境搭建.html" class="active sidebar-link">ZooKeeper环境搭建</a></li><li><a href="/blog/environment/06-Hadoop的HA.html" class="sidebar-link">Hadoop的HA</a></li><li><a href="/blog/environment/07-Hive环境搭建.html" class="sidebar-link">Hive环境搭建</a></li><li><a href="/blog/environment/08-Flume环境搭建.html" class="sidebar-link">Flume环境搭建</a></li><li><a href="/blog/environment/09-HBase环境搭建.html" class="sidebar-link">HBase环境搭建</a></li><li><a href="/blog/environment/10-Kafka环境搭建.html" class="sidebar-link">Kafka环境搭建</a></li><li><a href="/blog/environment/11-Redis环境搭建.html" class="sidebar-link">Redis环境搭建</a></li><li><a href="/blog/environment/12-ES环境搭建.html" class="sidebar-link">ES环境搭建</a></li><li><a href="/blog/environment/13-ClickHouse环境搭建.html" class="sidebar-link">ClickHouse环境搭建</a></li><li><a href="/blog/environment/14-Doris环境搭建.html" class="sidebar-link">Doris环境搭建</a></li><li><a href="/blog/environment/15-Spark on Yarn环境搭建.html" class="sidebar-link">Spark on Yarn 环境搭建</a></li><li><a href="/blog/environment/16-Flink on Yarn环境搭建.html" class="sidebar-link">Flink on Yarn 环境搭建</a></li><li><a href="/blog/environment/17-Hive On Spark环境搭建.html" class="sidebar-link">Hive On Spark 环境搭建</a></li><li><a href="/blog/environment/18-Spark On Hive环境搭建.html" class="sidebar-link">Spark On Hive 环境搭建</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><blockquote><p>本文档安装的是Zookeeper的集群模式</p></blockquote> <h1 id="_1、准备工作"><a href="#_1、准备工作" class="header-anchor">#</a> 1、准备工作</h1> <ul><li><p>安装 <code>JDK</code></p></li> <li><p>上传安装包到 <code>/opt/software</code> 目录下</p></li></ul> <h1 id="_2、解压文件"><a href="#_2、解压文件" class="header-anchor">#</a> 2、解压文件</h1> <p>将 <code>/opt/software</code> 目录下的 <code>Zookeeper</code> 压缩包解压到 <code>/opt/module</code> 目录下，并修改目录名称</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 ~<span class="token punctuation">]</span>$ <span class="token builtin class-name">cd</span> /opt/software/
+<span class="token punctuation">[</span>laowang@hadoop102 software<span class="token punctuation">]</span>$ <span class="token function">tar</span> -zxvf zookeeper-3.5.7.tar.gz -C /opt/module/
+<span class="token punctuation">[</span>laowang@hadoop102 software<span class="token punctuation">]</span>$ <span class="token builtin class-name">cd</span> /opt/module/
+<span class="token punctuation">[</span>laowang@hadoop102 module<span class="token punctuation">]</span>$ <span class="token function">mv</span> apache-zookeeper-3.5.7-bin/ zookeeper-3.5.7
+</code></pre></div><p>关于 <code>Zookeeper</code> 的环境变量配置：可以不配置环境变量，<code>Zookeeper</code> 一般是服务于其他应用，如 <code>Hadoop</code> 的高可用、<code>HBase</code> 集群、<code>Kafka</code> 集群等。如果需要操作 <code>Zookeeper</code> ，可以直接到 <code>Zookeeper</code> 的 <code>bin</code> 目录下下执行命令。当然也可以配置环境变量，执行如下操作即可。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 module<span class="token punctuation">]</span>$ <span class="token function">vim</span> /etc/profile.d/my_env.sh
+</code></pre></div><p>添加如下内容：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># ZOOKEEPER_HOME</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">ZOOKEEPER_HOME</span><span class="token operator">=</span>/opt/module/zookeeper-3.5.7
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$ZOOKEEPER_HOME</span>/bin
+</code></pre></div><h1 id="_3、修改配置"><a href="#_3、修改配置" class="header-anchor">#</a> 3、修改配置</h1> <h2 id="_3-1-配置服务器编号"><a href="#_3-1-配置服务器编号" class="header-anchor">#</a> 3.1 配置服务器编号</h2> <p>在 <code>/opt/module/zookeeper-3.5.7/</code> 这个目录下创建一个 <code>zkData</code> 目录</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 module<span class="token punctuation">]</span>$ <span class="token builtin class-name">cd</span> zookeeper-3.5.7/
+<span class="token punctuation">[</span>laowang@hadoop102 zookeeper-3.5.7<span class="token punctuation">]</span>$ <span class="token function">mkdir</span> zkData
+</code></pre></div><p>在 <code>/opt/module/zookeeper-3.5.7/zkData</code> 这个目录下创建一个 <code>myid</code> 的文件</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 zookeeper-3.5.7<span class="token punctuation">]</span>$ <span class="token builtin class-name">cd</span> zkData/
+<span class="token punctuation">[</span>laowang@hadoop102 zkData<span class="token punctuation">]</span>$ <span class="token function">vim</span> myid
+</code></pre></div><p>在文件中添加与server对应的编号：注意上下不要有空行，左右不要有空格</p> <div class="language- extra-class"><pre class="language-text"><code>2
+</code></pre></div><h2 id="_3-2-配置zoo-cfg文件"><a href="#_3-2-配置zoo-cfg文件" class="header-anchor">#</a> 3.2 配置zoo.cfg文件</h2> <p>拷贝 <code>/opt/module/zookeeper-3.5.7/conf</code>  这个目录下的 <code>zoo_sample.cfg</code> 并重命名为 <code>zoo.cfg</code> 并编辑</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 zkData<span class="token punctuation">]</span>$ <span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>/conf/
+<span class="token punctuation">[</span>laowang@hadoop102 conf<span class="token punctuation">]</span>$ <span class="token function">cp</span> zoo_sample.cfg zoo.cfg
+<span class="token punctuation">[</span>laowang@hadoop102 conf<span class="token punctuation">]</span>$ <span class="token function">vim</span> zoo.cfg
+</code></pre></div><p>修改如下内容：</p> <div class="language- extra-class"><pre class="language-text"><code># 修改数据存储路径配置
+dataDir=/opt/module/zookeeper-3.5.7/zkData
+# 增加如下配置
+#######################cluster##########################
+server.2=hadoop102:2888:3888
+server.3=hadoop103:2888:3888
+server.4=hadoop104:2888:3888
+</code></pre></div><p>参数解读：</p> <div class="language- extra-class"><pre class="language-text"><code>server.A=B:C:D
+</code></pre></div><ul><li>A 是一个数字，表示这个是第几号服务器；</li></ul> <p>集群模式下配置一个文件 myid，这个文件在 dataDir 目录下，这个文件里面有一个数据就是 A 的值，Zookeeper 启动时读取此文件，拿到里面的数据与 zoo.cfg 里面的配置信息比较从而判断到底是哪个 server。</p> <ul><li><p>B 是这个服务器的地址；</p></li> <li><p>C 是这个服务器 Follower 与集群中的 Leader 服务器交换信息的端口；</p></li> <li><p>D 是万一集群中的 Leader 服务器挂了，需要一个端口来重新进行选举，选出一个新的Leader，而这个端口就是用来执行选举时服务器相互通信的端口。</p></li></ul> <h1 id="_4、同步文件"><a href="#_4、同步文件" class="header-anchor">#</a> 4、同步文件</h1> <p>将 <code>/opt/module/zookeeper-3.5.7</code> 目录同步至另外两台服务器</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 conf<span class="token punctuation">]</span>$ <span class="token builtin class-name">cd</span> /opt/module/
+<span class="token punctuation">[</span>laowang@hadoop102 module<span class="token punctuation">]</span>$ xsync zookeeper-3.5.7/
+</code></pre></div><blockquote><p>注意：</p> <p>分发文件后分别在 hadoop103、hadoop104 上修改 myid 文件中内容为 3、4。</p> <p>如果配置了环境变量，也需要进行分发，并刷新环境变量</p></blockquote> <h1 id="_5、脚本编写"><a href="#_5、脚本编写" class="header-anchor">#</a> 5、脚本编写</h1> <p>编写 <code>Zookeeper</code> 的启停脚本并赋予执行权限</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>laowang@hadoop102 module<span class="token punctuation">]</span>$ <span class="token builtin class-name">cd</span> ~/bin
+<span class="token punctuation">[</span>laowang@hadoop102 bin<span class="token punctuation">]</span>$ <span class="token function">vim</span> zk.sh
+<span class="token punctuation">[</span>laowang@hadoop102 bin<span class="token punctuation">]</span>$ <span class="token function">chmod</span> u+x zk.sh
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token keyword">case</span> <span class="token variable">$1</span> <span class="token keyword">in</span>
+<span class="token string">&quot;start&quot;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> hadoop102 hadoop103 hadoop104
+	<span class="token keyword">do</span>
+		<span class="token builtin class-name">echo</span> ---------- zookeeper <span class="token variable">$i</span> 启动 ------------
+		<span class="token function">ssh</span> <span class="token variable">$i</span> <span class="token string">&quot;/opt/module/zookeeper-3.5.7/bin/zkServer.sh start&quot;</span>
+	<span class="token keyword">done</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token string">&quot;stop&quot;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> hadoop102 hadoop103 hadoop104
+	<span class="token keyword">do</span>
+	<span class="token builtin class-name">echo</span> ---------- zookeeper <span class="token variable">$i</span> 停止 ------------
+	<span class="token function">ssh</span> <span class="token variable">$i</span> <span class="token string">&quot;/opt/module/zookeeper-3.5.7/bin/zkServer.sh stop&quot;</span>
+	<span class="token keyword">done</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token string">&quot;status&quot;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> hadoop102 hadoop103 hadoop104
+	<span class="token keyword">do</span>
+		<span class="token builtin class-name">echo</span> ---------- zookeeper <span class="token variable">$i</span> 状态 ------------
+		<span class="token function">ssh</span> <span class="token variable">$i</span> <span class="token string">&quot;/opt/module/zookeeper-3.5.7/bin/zkServer.sh status&quot;</span>
+	<span class="token keyword">done</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/environment/04-Hadoop集群环境搭建.html" class="prev">
+        Hadoop环境搭建
+      </a></span> <span class="next"><a href="/blog/environment/06-Hadoop的HA.html">
+        Hadoop的HA
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><section class="side-anchor"><ul style="display:none;"></ul></section></div></div>
+    <script src="/blog/assets/js/app.eb600adf.js" defer></script><script src="/blog/assets/js/2.d9499689.js" defer></script><script src="/blog/assets/js/17.b25aab8f.js" defer></script>
+  </body>
+</html>
